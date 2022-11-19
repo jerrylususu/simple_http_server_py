@@ -1,5 +1,7 @@
 # Simple HTTP Server
 
+![screenshot](screenshot.png)
+
 基于 [UniIsland 的 Gist](https://gist.github.com/UniIsland/3346170) 和 [Tallguy297/SimpleHTTPServerWithUpload](https://github.com/Tallguy297/SimpleHTTPServerWithUpload) 的代码，稍作修改：
 1. 移除了图标
 2. 解决了 Ctrl-C 退出后立刻重启，提示 `port already in use` 的问题
