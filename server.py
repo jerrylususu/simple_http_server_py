@@ -120,8 +120,8 @@ class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
             f.write(b"<strong>Success!</strong>")
         else:
             f.write(b"<strong>Failed!</strong>")
-        f.write(info.encode())
-        f.write(("<br><br><a href=\"%s\">" % self.headers['referer']).encode())
+        f.write(info.encode('utf8'))
+        f.write(("<br><br><a href=\"%s\">" % self.headers['referer']).encode("utf8"))
         f.write(b"<button>Back</button></a>\n")
         f.write(b"<hr><small>Powered By: bones7456<br>Check new version from the original creator (bones7456) ")
         f.write(b"<a href=\"https://gist.github.com/UniIsland/3346170\" target=\"_blank\">here</a>. <br>")
@@ -131,7 +131,7 @@ class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
         length = f.tell()
         f.seek(0)
         self.send_response(200)
-        self.send_header("Content-type", "text/html")
+        self.send_header("Content-type", "text/html; charset=utf-8")
         self.send_header("Content-Length", str(length))
         self.end_headers()
         if f:
@@ -143,7 +143,7 @@ class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
         content_type = self.headers['content-type']
         if not content_type:
             return (False, "Content-Type header doesn't contain boundary")
-        boundary = content_type.split("=")[1].encode()
+        boundary = content_type.split("=")[1].encode("utf8")
         remainbytes = int(self.headers['content-length'])
         line = self.rfile.readline()
         remainbytes -= len(line)
@@ -266,7 +266,8 @@ class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
         except os.error:
             self.send_error(404, "No permission to list directory")
             return None
-        enc = sys.getfilesystemencoding()
+        # enc = sys.getfilesystemencoding()
+        enc = "utf8"
         list.sort(key=lambda a: a.lower())
         f = BytesIO()
         displaypath = html.escape(urllib.parse.unquote(self.path))
