@@ -8,6 +8,8 @@
 
 运行：`python3 -m httpserver4u`
 
+不需安装运行：`python src/httpserver4u/server.py`（单脚本即可执行）
+
 无三方库依赖。适用于 Python 3.6 及以上版本。
 
 基于 [UniIsland 的 Gist](https://gist.github.com/UniIsland/3346170) 和 [Tallguy297/SimpleHTTPServerWithUpload](https://github.com/Tallguy297/SimpleHTTPServerWithUpload) 的代码，稍作修改：
@@ -25,6 +27,8 @@ A simple HTTP server with file upload/download and quick text save function.
 Install：`pip3 install httpserver4u`
 
 Run：`python3 -m httpserver4u`
+
+Run without install：`python src/httpserver4u/server.py` (This script contains all functionality.)
 
 No third-party dependency. Python 3.6 or newer version required.
 
