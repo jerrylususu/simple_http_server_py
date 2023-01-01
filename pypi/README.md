@@ -1,7 +1,5 @@
 # Simple HTTP Server
 
-![screenshot](screenshot.png)
-
 一个支持文件上传下载和临时文本保存的 HTTP 服务器。
 
 安装：`pip3 install httpserver4u`
