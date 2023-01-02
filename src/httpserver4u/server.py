@@ -126,7 +126,7 @@ class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
         f.write(info.encode('utf8'))
         f.write(("<br><br><a href=\"%s\">" % self.headers['referer']).encode("utf8"))
         f.write(b"<button>Back</button></a>\n")
-        f.write(b"<hr><small>Powered By: bones7456<br>Check new version from the original creator (bones7456) ")
+        f.write(b"<hr><small>Powered By: httpserver4u<br>Check new version from the original creator (bones7456) ")
         f.write(b"<a href=\"https://gist.github.com/UniIsland/3346170\" target=\"_blank\">here</a>. <br>")
         f.write(b"Or from the creator of the version you're using now ")
         f.write(b"<a href=\"https://github.com/jerrylususu/simple_http_server_py\" target=\"_blank\">here</a>.")
