@@ -180,7 +180,8 @@ class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
                     out = open(fn, 'wb')
                 else:
                     out = open(fn, 'w', encoding="utf8")
-            except IOError:
+            except IOError as e:
+                print("IOError when writing file:", e)
                 return (False, "<br><br>Can't create file to write.<br>Do you have permission to write?")
             else:
                 with out:  
@@ -426,6 +427,8 @@ def test(host="0.0.0.0", port=8000, text_filename="simple_python_server_text.txt
     """Test the HTTP request handler class.
     This runs an HTTP server on port 8000 (or the port argument).
     """
+    global TEXT_FILE_NAME
+    TEXT_FILE_NAME = text_filename
     with ThreadingHTTPServer((host, port), SimpleHTTPRequestHandler) as httpd:
         host, port = httpd.socket.getsockname()[:2]
         url_host = f'[{host}]' if ':' in host else host
@@ -448,7 +451,8 @@ def parse_arguments():
                             default=8000, type=int,
                             nargs='?',
                             help='Specify alternate port [default: 8000]')
-    parser.add_argument('--text_filename', type=str, 
+    parser.add_argument('--text_filename', type=str,
+                            default='simple_python_server_text.txt',
                             help='File name for the text file (to store the memo). '
                             '[default: simple_python_server_text.txt]')
     args = parser.parse_args()
