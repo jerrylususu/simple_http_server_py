@@ -8,7 +8,7 @@
 
 运行：`python3 -m httpserver4u`
 
-不需安装运行：`python src/httpserver4u/server.py`（单脚本即可执行）
+不需安装运行：`python src/httpserver4u/server.py` [代码](https://github.com/jerrylususu/simple_http_server_py/blob/main/src/httpserver4u/server.py)（单脚本即可执行）
 
 无三方库依赖。适用于 Python 3.6 及以上版本。
 
@@ -28,7 +28,7 @@ Install：`pip3 install httpserver4u`
 
 Run：`python3 -m httpserver4u`
 
-Run without install：`python src/httpserver4u/server.py` (This script contains all functionality.)
+Run without install：`python src/httpserver4u/server.py`[source code](https://github.com/jerrylususu/simple_http_server_py/blob/main/src/httpserver4u/server.py) (This script contains all functionality.)
 
 No third-party dependency. Python 3.6 or newer version required.
 
